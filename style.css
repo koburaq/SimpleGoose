@@ -1,7 +1,22 @@
 body{
     background-color:darkgrey;
 }
+
 div#infoJuego{
     background-color:lightgrey;
     text-align: center;
+}
+
+ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.jugador-actual {
+    font-weight: bold;
+    color: #007bff; /* Azul */
+    background-color: #f0f8ff; /* Azul claro suave */
+    padding: 4px 8px;
+    border-radius: 6px;
 }

@@ -18,7 +18,7 @@ export const specialTiles = {
   17: { message: "Retrocedes 3 casillas", effect: -3 },
   18: { message: "De animal en animal (3 calos)", effect: +2 }, // TODO
   19: { message: "Fuman los del año 2000 en adelante (4 calos)", effect: 0 },
-  20: { message: "Avanza 3 casillas", effect: +3, effect: 0 },
+  20: { message: "Avanza 3 casillas", effect: +3 },
   21: { message: "Fuman los del año 1999 hacia atrás (4 calos)", effect: 0 },
   22: { message: "Persona elegida (5 calos)", effect: 0 },
   23: { message: "Avanzas a la casilla nº 33", effect: +10 },
@@ -44,7 +44,7 @@ export const specialTiles = {
   43: { message: "Quien sea más negr@ (4 calos)", effect: 0 },
   44: { message: "Retrocede 10", effect: -10 },
   45: { message: "Quien esté en mejores condiciones (4 calos)", effect: 0 },
-  46: { message: "Retrocede 5 casillas", effect: -5, effect: 0 },
+  46: { message: "Retrocede 5 casillas", effect: -5 },
   47: { message: "FUUUMAAAA FATEMAAAAAAA", effect: 0 }, // TODO
   48: { message: "Quien tenga mejor cara (4 calos)", effect: 0 },
   49: { message: "Ping-Pong con quien quieras", effect: 0 },

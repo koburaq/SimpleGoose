@@ -23,11 +23,19 @@ export class Game {
 	}
 
 	updateInfo() {
-		const info = this.players.map((p, i) =>
-			`${i === this.currentTurn && !this.gameOver ? '👉 ' : ''}${p.name}: Casilla ${p.position}`
-		).join('<br>');
-		document.getElementById('infoJuego').innerHTML = info;
-	}
+    let info = '<ul>';
+    this.players.forEach((player, index) => {
+        const isCurrent = index === this.currentTurn && !this.gameOver;
+        const prefix = isCurrent ? '👉 ' : '';
+        const className = isCurrent ? 'jugador-actual' : '';
+        
+        info += `<li class="${className}">${prefix}${player.name}: Casilla ${player.position}</li>`;
+    });
+
+    info += '</ul>';
+
+    document.getElementById('infoJuego').innerHTML = info;
+}
 
 	async playTurn() {
 		if (this.gameOver) return;
@@ -44,13 +52,13 @@ export class Game {
 
 		const special = this.specialTiles[player.position];
 		if (special.sound) {
-			const audio = new Audio("media\\" + special.sound);
+			const audio = new Audio("media/" + special.sound);
 			audio.play();
 		}
 		await Swal.fire({
 			title: `Casilla ${player.position}`,
 			text: special.message,
-			imageUrl: "media/img/test.png",
+			imageUrl: special.image ? "media/" + special.image : undefined,
 			imageWidth: 400,
 			imageHeight: 200
 		});

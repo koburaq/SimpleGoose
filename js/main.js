@@ -8,7 +8,7 @@ async function iniciarJuego() {
     input: 'number',
     allowOutsideClick: false,
     allowEscapeKey: false,
-    inputAttributes: { min: 2, max: 6, step: 1 },
+    inputAttributes: { min: 2, step: 1 },
     inputValidator: (value) => {
       if (!value) {
         return 'El campo no puede quedar vacío';
