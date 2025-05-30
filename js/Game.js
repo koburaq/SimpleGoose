@@ -26,8 +26,10 @@ export class Game {
 		let info = '<ul>';
 		this.players.forEach((player, index) => {
 			const isCurrent = index === this.currentTurn && !this.gameOver;
-			const prefix = isCurrent ? '👉 ' : '';
-			const className = isCurrent ? 'jugador-actual' : '';
+			const isWinner = this.gameOver && player.position >= this.goal;
+
+			const prefix = isWinner ? '👑 ' : isCurrent ? '👉 ' : '';
+			const className = isCurrent ? 'jugador-actual' : isWinner ? 'jugador-ganador' : '';
 
 			info += `<li class="${className}">${prefix}${player.name}: Casilla ${player.position}</li>`;
 		});
@@ -36,6 +38,7 @@ export class Game {
 
 		document.getElementById('infoJuego').innerHTML = info;
 	}
+
 
 	async playTurn() {
 		if (this.gameOver) return;
@@ -58,7 +61,12 @@ export class Game {
 			await Swal.fire({
 				title: `🎉 ¡${player.name} ha ganado!`,
 				text: `Llegó a la casilla ${this.goal}.`,
-				icon: 'success'
+				icon: 'success',
+				allowOutsideClick: false,
+				allowEscapeKey: false,
+				showConfirmButton: false,
+				timer: 10000,
+				timerProgressBar: true
 			});
 
 			document.getElementById('tirarDado').disabled = true;
@@ -83,22 +91,6 @@ export class Game {
 				// Lógica de límites
 				if (player.position < 1) player.position = 1;
 				if (player.position > this.goal) player.position = this.goal;
-
-				// Rechequea si ganó tras efecto especial
-				if (player.hasWon(this.goal)) {
-					player.position = this.goal;
-					this.gameOver = true;
-
-					await Swal.fire({
-						title: `🎉 ¡${player.name} ha ganado!`,
-						text: `Llegó a la casilla ${this.goal}.`,
-						icon: 'success'
-					});
-
-					document.getElementById('tirarDado').disabled = true;
-					this.updateInfo();
-					return;
-				}
 			}
 		}
 

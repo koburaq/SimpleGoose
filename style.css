@@ -15,8 +15,12 @@ ul{
 
 .jugador-actual {
     font-weight: bold;
-    color: #007bff; /* Azul */
-    background-color: #f0f8ff; /* Azul claro suave */
-    padding: 4px 8px;
+    color: #007bff;
+    background-color: #f0f8ff;
+    padding: 4px;
     border-radius: 6px;
+}
+.jugador-ganador {
+    color: red;
+    font-weight: bold;
 }
