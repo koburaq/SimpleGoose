@@ -23,19 +23,19 @@ export class Game {
 	}
 
 	updateInfo() {
-    let info = '<ul>';
-    this.players.forEach((player, index) => {
-        const isCurrent = index === this.currentTurn && !this.gameOver;
-        const prefix = isCurrent ? '👉 ' : '';
-        const className = isCurrent ? 'jugador-actual' : '';
-        
-        info += `<li class="${className}">${prefix}${player.name}: Casilla ${player.position}</li>`;
-    });
+		let info = '<ul>';
+		this.players.forEach((player, index) => {
+			const isCurrent = index === this.currentTurn && !this.gameOver;
+			const prefix = isCurrent ? '👉 ' : '';
+			const className = isCurrent ? 'jugador-actual' : '';
 
-    info += '</ul>';
+			info += `<li class="${className}">${prefix}${player.name}: Casilla ${player.position}</li>`;
+		});
 
-    document.getElementById('infoJuego').innerHTML = info;
-}
+		info += '</ul>';
+
+		document.getElementById('infoJuego').innerHTML = info;
+	}
 
 	async playTurn() {
 		if (this.gameOver) return;
@@ -50,27 +50,9 @@ export class Game {
 			icon: 'info'
 		});
 
-		const special = this.specialTiles[player.position];
-		if (special.sound) {
-			const audio = new Audio("media/" + special.sound);
-			audio.play();
-		}
-		await Swal.fire({
-			title: `Casilla ${player.position}`,
-			text: special.message,
-			imageUrl: special.image ? "media/" + special.image : undefined,
-			imageWidth: 400,
-			imageHeight: 200
-		});
-
-		if (special.effect) {
-			player.move(special.effect);
-			if (player.position < 1) player.position = 1;
-			if (player.position > this.goal) player.position = this.goal;
-		}
-
-		if (player.hasWon(this.goal)) {
-			player.position = this.goal;
+		// Verifica si ya ganó tras moverse con el dado
+		if (player.position >= this.goal) {
+			// player.position = this.goal;
 			this.gameOver = true;
 
 			await Swal.fire({
@@ -80,10 +62,47 @@ export class Game {
 			});
 
 			document.getElementById('tirarDado').disabled = true;
-		} else {
-			this.nextTurn();
+			this.updateInfo();
+			return; // Muy importante: termina aquí si ya ganó
 		}
 
+		const special = this.specialTiles[player.position];
+
+		if (special) {
+			await Swal.fire({
+				title: `Casilla ${player.position}`,
+				text: special.message ? special.message : '',
+				imageUrl: special.image ? "media/" + special.image : undefined,
+				imageWidth: 400,
+				imageHeight: 200
+			});
+
+			if (special.effect) {
+				player.move(special.effect);
+
+				// Lógica de límites
+				if (player.position < 1) player.position = 1;
+				if (player.position > this.goal) player.position = this.goal;
+
+				// Rechequea si ganó tras efecto especial
+				if (player.hasWon(this.goal)) {
+					player.position = this.goal;
+					this.gameOver = true;
+
+					await Swal.fire({
+						title: `🎉 ¡${player.name} ha ganado!`,
+						text: `Llegó a la casilla ${this.goal}.`,
+						icon: 'success'
+					});
+
+					document.getElementById('tirarDado').disabled = true;
+					this.updateInfo();
+					return;
+				}
+			}
+		}
+
+		this.nextTurn();
 		this.updateInfo();
 	}
 }
