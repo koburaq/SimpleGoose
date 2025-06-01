@@ -121,51 +121,98 @@ export const specialTiles = {
   26: {
       message: "Fuman los que estudien (4 calos)", effect: 0},
   27: {
-      message: "Te estás quedando sin papeles (retrocede 5 casillas)", effect: -5},
+      message: "Te estás quedando sin papeles (retrocede 5 casillas)",
+      effect: -5
+    },
   28: {
-      message: "Reparte 3 calos", effect: 0},
+      message: "Reparte 3 calos",
+      effect: 0
+    },
   29: {
-      message: "FUMA FATIMA FUMA (3 calos)", effect: +10},
+      message:
+      "FUMA FATIMA FUMA (3 calos)",
+      effect: +10},
   30: {
       message: "Calo del Padre", effect: 0},
   31: {
-      message: "Tirar dado para saber las caladas", effect: 0}, // TODO
+      message: "Tirar dado para saber las caladas",
+      effect: 0
+    }, // TODO
   32: {
-      message: "Pares o Nones (Ganador: 3 - Perdedor: 1)", effect: 0},
+      message: "Pares o Nones (Ganador: 3 - Perdedor: 1)",
+      effect: 0
+    },
   33: {
-      message: "Piedra, Papel, Tijera (?)", effect: 0}, // TODO
+      message: "Piedra, Papel, Tijera (?)",
+      effect: 0
+    }, // TODO
   34: {
-      message: "Los ninis (4 calos)", effect: 0},
+      message: "Los ninis (4 calos)",
+      effect: 0
+    },
   35: {
-      message: "Pierdes el turno", effect: 0},
+      message: "Pierdes el turno",
+      effect: 0
+    },
   36: {
-      message: "Los que tengan menos pertenencias en la mesa (4 calos)", effect: 0},
+      message: "Los que tengan menos pertenencias en la mesa (4 calos)",
+      effect: 0
+    },
   37: {
-      message: "Avanza hasta la 42", effect: +5},
+      message: "Avanza hasta la 42",
+      effect: +5
+    },
   38: {
-      message: "Quien conozca más apellidos de los jugadores (4 calos)", effect: 0},
+      message: "Quien conozca más apellidos de los jugadores (4 calos)",
+      effect: 0
+    },
   39: {
-      message: "De animal en animal y fuma como tal, PERR@ (4 calos)", effect: +8},
+      message: "De animal en animal y fuma como tal, PERR@ (4 calos)",
+      effect: +8
+    },
   40: {
-      message: "Quien peor vaya (4 calos)", effect: 0},
+      message: "Quien peor vaya (4 calos)",
+      effect: 0
+    },
   41: {
-      message: "Quien tenga los ojos más rojos (4 calos)", effect: 0},
+      message:
+      "Quien tenga los ojos más rojos (4 calos)",
+      effect: 0
+    },
   42: {
-      message: "La mano de Frank?", effect: 0},
+      message: "La mano de Frank?",
+      effect: 0
+    },
   43: {
-      message: "Quien sea más negr@ (4 calos)", effect: 0},
+      message: "Quien sea más negr@ (4 calos)",
+      effect: 0
+    },
   44: {
-      message: "Retrocede 10", effect: -10},
+      message: "Retrocede 10",
+      effect: -10
+    },
   45: {
-      message: "Quien esté en mejores condiciones (4 calos)", effect: 0},
+      message: "Quien esté en mejores condiciones (4 calos)",
+      effect: 0
+    },
   46: {
-    message: "Retrocede 5 casillas", effect: -5},
+    message: "Retrocede 5 casillas",
+    effect: -5
+  },
   47: {
-      message: "FUUUMAAAA FATEMAAAAAAA (-8)", effect: -8},
+      message: "FUUUMAAAA FATEMAAAAAAA (-8)",
+      effect: -8
+    },
   48: {
-      message: "Quien tenga mejor cara (4 calos)", effect: 0},
+      message: "Quien tenga mejor cara (4 calos)",
+      effect: 0
+    },
   49: {
-      message: "Ping-Pong con quien quieras", effect: 0},
+      message: "Ping-Pong con quien quieras",
+      effect: 0
+    },
   50: {
-      message: "FIN", effect: 0},
+      message: "FIN",
+      effect: 0
+    },
 };
