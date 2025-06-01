@@ -6,13 +6,13 @@ async function iniciarJuego() {
   const { value: num } = await Swal.fire({
     title: '¿Cuántos jugadores?',
     input: 'number',
+    imageUrl: 'media/img/gooseHat',
+    imageWidth: 250,
+    imageHeight: 300,
     allowOutsideClick: false,
     allowEscapeKey: false,
     inputAttributes: { min: 2, step: 1 },
     inputValidator: (value) => {
-      if (!value) {
-        return 'El campo no puede quedar vacío';
-      }
       if (isNaN(value) || value <= 0) {
         return "Introduce un número válido mayor que cero";
       }

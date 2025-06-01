@@ -77,10 +77,18 @@ export class Game {
 		const special = this.specialTiles[player.position];
 
 		if (special) {
+
+			if (special.sound) {
+				const audio = new Audio("media/audio/" + special.sound);
+				audio.play().catch((error) => {
+					console.log("No se pudo reproducir audio.", error);
+				});
+			}
+
 			await Swal.fire({
 				title: `Casilla ${player.position}`,
 				text: special.message ? special.message : '',
-				imageUrl: special.image ? "media/" + special.image : undefined,
+				imageUrl: special.image ? "media/img/" + special.image : undefined,
 				imageWidth: 400,
 				imageHeight: 200
 			});
