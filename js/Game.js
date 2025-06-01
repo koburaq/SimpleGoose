@@ -11,6 +11,7 @@ export class Game {
 	}
 
 	addPlayer(name) {
+		console.log(name);
 		this.players.push(new Player(name));
 	}
 
@@ -50,7 +51,9 @@ export class Game {
 		await Swal.fire({
 			title: `${player.name} ha tirado el dado`,
 			text: `Sacó un ${roll}. Nueva posición: ${player.position}`,
-			icon: 'info'
+			imageUrl: "media/img/dice/dice-" + roll,
+			imageWidth: 100,
+			imageHeight: 100
 		});
 
 		// Verifica si ya ganó tras moverse con el dado

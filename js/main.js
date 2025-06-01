@@ -6,9 +6,11 @@ async function iniciarJuego() {
   const { value: num } = await Swal.fire({
     title: '¿Cuántos jugadores?',
     input: 'number',
-    imageUrl: 'media/img/gooseHat',
+    imageUrl: 'media/img/gooseHat.png',
     imageWidth: 250,
     imageHeight: 300,
+    confirmButtonText: '¡Empieza!',
+    confirmButtonColor: '#000000',
     allowOutsideClick: false,
     allowEscapeKey: false,
     inputAttributes: { min: 2, step: 1 },
