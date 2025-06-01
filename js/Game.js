@@ -10,8 +10,8 @@ export class Game {
 		this.specialTiles = specialTiles;
 	}
 
-	addPlayer(name) {
-		console.log(name);
+	addPlayer(input) {
+		const name = input.charAt(0).toUpperCase() + input.slice(1);
 		this.players.push(new Player(name));
 	}
 
