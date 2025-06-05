@@ -91,7 +91,7 @@ export class Game {
 			await Swal.fire({
 				title: `Casilla ${player.position}`,
 				text: special.message ? special.message : '',
-				imageUrl: special.image ? "media/img/" + special.image + ".png" : undefined,
+				imageUrl: special.image ? "media/img/" + special.image : undefined,
 				imageWidth: 400,
 				imageHeight: 200
 			});
