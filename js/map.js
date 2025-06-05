@@ -2,61 +2,61 @@ export const specialTiles = {
   1: {
       message: "3 calos",
       effect: 0,
-      image: "gooseJoint.png",
+      image: "gooseJoint.jpg",
       sound: "dirtySiren.mp3"
       },
   2: {
       message: "Calo del Padre",
       effect: 0,
-      image: "goosePlant.png",
+      image: "goosePlant.jpg",
       sound: "dirtySiren.mp3"
     },
   3: {
       message: "Avanza +3 casillas",
       effect: +3,
-      image: "gooseJoint.png",
+      image: "gooseJoint.jpg",
       sound: "dirtySiren.mp3"
     },
   4: {
       message: "Piedra, Papel, Tijera (Ganador 3 calos)",
       effect: 0,
-      image: "goosePlant.png",
+      image: "goosePlant.jpg",
       sound: "dirtySiren.mp3"
     },
   5: {
       message: "El más picamecheros (4 calos)",
       effect: 0,
-      image: "gooseJoint.png",
+      image: "gooseJoint.jpg",
       sound: "dirtySiren.mp3"
     },
   6: {
       message: "Quien lleve más mecheros encima (4 calos)",
       effect: 0,
-      image: "goosePlant.png",
+      image: "goosePlant.jpg",
       sound: "dirtySiren.mp3"
     },
   7: {
       message: "El más alto (4 calos)",
       effect: 0,
-      image: "gooseJoint.png",
+      image: "gooseJoint.jpg",
       sound: "dirtySiren.mp3"
     },
   8: {
       message: "El más bajo (4 calos)",
       effect: 0,
-      image: "goosePlant.png",
+      image: "goosePlant.jpg",
       sound: "dirtySiren.mp3"
     },
   9: {
       message: "De animal en animal (3 calos)",
       effect: +9,
-      image: "gooseJoint.png",
+      image: "gooseJoint.jpg",
       sound: "dirtySiren.mp3"
     },
   10: {
       message: "Pierdes el turno",
       effect: 0,
-      image: "goosePlant.png"
+      image: "goosePlant.jpg"
     },
   11: {
       message: "Retrocedes 3 casillas",
