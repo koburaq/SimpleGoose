@@ -51,7 +51,7 @@ export class Game {
 		await Swal.fire({
 			title: `${player.name} ha tirado el dado`,
 			text: `Sacó un ${roll}. Nueva posición: ${player.position}`,
-			imageUrl: "media/img/dice/dice" + roll,
+			imageUrl: "media/img/dice/dice" + roll + ".png",
 			imageWidth: 100,
 			imageHeight: 100
 		});
@@ -91,7 +91,7 @@ export class Game {
 			await Swal.fire({
 				title: `Casilla ${player.position}`,
 				text: special.message ? special.message : '',
-				imageUrl: special.image ? "media/img/" + special.image : undefined,
+				imageUrl: special.image ? "media/img/" + special.image + ".png" : undefined,
 				imageWidth: 400,
 				imageHeight: 200
 			});
